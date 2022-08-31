@@ -45,12 +45,12 @@ NSMutableDictionary* _backgroundActionCompletionHandlers;
 
 - (void)completeAction:(NSString *)completionKey {
     void (^completionHandler)() = (void (^)())[_actionCompletionHandlers valueForKey:completionKey];
-    if (completionHandler) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionHandler();
-            [_actionCompletionHandlers removeObjectForKey:completionKey];
-        });
-    }
+    // if (completionHandler) {
+    //     dispatch_async(dispatch_get_main_queue(), ^{
+    //         completionHandler();
+    //         [_actionCompletionHandlers removeObjectForKey:completionKey];
+    //     });
+    // }
 }
 
 - (void)completePresentation:(NSString *)completionKey withPresentationOptions:(UNNotificationPresentationOptions)presentationOptions {
